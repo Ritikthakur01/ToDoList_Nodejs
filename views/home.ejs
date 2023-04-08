@@ -11,221 +11,58 @@
 <body>
     <div class="todolist">
         <div class="heading">
-            <h2>To-Do List</h2>
+            <h2>To-<span>Do</span> List</h2>
         </div>
         <div class="inputs-buttons">
-            <div class="description">
-                <input type="text" placeholder="What do you need to do?" name="description">
-            </div>
-            <div class="category">
-                <select name="category" id="category" aria-placeholder="Choose a category">
-                    <option disabled selected hidden>Choose a Category</option>
-                    <option value="Personal">Personal</option>
-                    <option value="School">School</option>
-                    <option value="Work">Work</option>
-                    <option value="Cleaning">Cleaning</option>
-                    <option value="Others">Others</option>
-                </select>
-            </div>
-            <div class="date">
-                <label for="date">Due Date</label>
-                <input type="date" name="date" id="date">
-            </div>
-            <div class="add_button">
-                <button type="submit">Add ToDo</button>
-            </div>
-            <div class="deleteAll_button">
-                <button type="submit">Delete All</button>
-            </div>
+            <form action="/add_todo" method="post">
+                <div class="description">
+                    <input type="text" placeholder="What do you need to do?" name="description">
+                </div>
+                <div class="category">
+                    <select name="category" id="category" aria-placeholder="Choose a category">
+                        <option disabled selected hidden>Choose a Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="School">School</option>
+                        <option value="Work">Work</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="date">
+                    <label for="date">Due Date</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="add_button">
+                    <button type="submit">Add ToDo</button>
+                </div>
+            </form>
+            <a href="/delete_all">
+                <div class="deleteAll_button">
+                    <button type="submit">Delete</button>
+                </div>
+            </a>
         </div>
         <div class="list">
             <ul>
+                <% for(let i of todolist) { %>
                 <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
+                    <input type="checkbox" id="<%= i._id %>" name="iscomplete">
+                    <div class="info">
+                        <div id="text">
+                            <label for="<%= i._id %>" name="description"><%= i.desc%></label> 
                         </div>
                         <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
+                            <i class="fa-solid fa-calendar-days"></i><span id="date" name="date">&nbsp;&nbsp;<%= i.date %></span>
                         </div>
                     </div>
                     <div id="category">
-                        <p>School</p>
+                        <p name="category"><%= i.category %></p>
                     </div>
                     <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
+                        <a href="/delete?id=<%= i._id %>"><i class="fa-solid fa-circle-xmark cross"></i></a>
                     </div>
                 </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li><li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
-                <li>
-                    <div><input type="checkbox" id="check"></div>
-                    <div>
-                        <div>
-                            <label for="check">hii</label> 
-                        </div>
-                        <div class="date">
-                            <i class="fa-solid fa-calendar-days"></i><span> 1 jan</span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p>School</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-xmark cross"></i>
-                    </div>
-                </li>
+                <% } %>
             </ul>
         </div>
     </div>

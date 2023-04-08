@@ -23,6 +23,9 @@ body{
 .todolist .heading h2{
     margin-left: 1.5rem;
 }
+.todolist .heading span{
+    color:brown
+}
 .todolist .inputs-buttons{
     width: 100%;
     height:25%;
@@ -32,13 +35,17 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.todolist .inputs-buttons .description{
-    width:70%;
+.todolist .inputs-buttons form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.todolist .inputs-buttons form .description{
+    width:80%;
     height:50%;
     display: grid;
     place-items: center;
 }
-.todolist .inputs-buttons .description input{
+.todolist .inputs-buttons form .description input{
     width:88%;
     height:70%;
     color: white;
@@ -48,14 +55,14 @@ body{
     border: 1px solid whitesmoke;
 }
 /* category */
-.todolist .inputs-buttons .category{
-    width:35%;
+.todolist .inputs-buttons form .category{
+    width:45%;
     height:50%;
     display: grid;
     place-items: center;
     margin-left: 10px;
 }
-.todolist .inputs-buttons .category select{
+.todolist .inputs-buttons form .category select{
     width:88%;
     height:70%;
     color: white;
@@ -65,7 +72,7 @@ body{
     border: 1px solid whitesmoke;
 }
 /* date */
-.todolist .inputs-buttons .date{
+.todolist .inputs-buttons form .date{
     width:30%;
     height:33%;
     display: grid;
@@ -75,29 +82,31 @@ body{
     position: relative;
     top: 9.5px;
 }
-.todolist .inputs-buttons .date input{
-    width:88%;
+.todolist .inputs-buttons form .date input{
+    width:90%;
     height:90%;
     color: white;
     font-size: large;
-    margin-left: 10px;
+    margin-left: 20px;
     background-color: rgb(25, 25, 25);
     border: none;
 }
-.todolist .inputs-buttons .date label{
+.todolist .inputs-buttons form .date label{
     color: rgb(218, 48, 48);
     font-weight:100;
 }
 
 /* // add button */
-.todolist .inputs-buttons .add_button{
-    width: 25%;
+.todolist .inputs-buttons form .add_button{
+    width: 23%;
     height:35%;
     position: relative;
-    top:-57px;
-    margin-left:25px
+    left:51px;
+    top:-56px;
+    
+    
 }
-.todolist .inputs-buttons .add_button button{
+.todolist .inputs-buttons form .add_button button{
     width: 100%;
     height: 100%;
     border-radius: 30px;
@@ -106,21 +115,23 @@ body{
     font-size: larger;
     border: none;
 }
-.todolist .inputs-buttons .deleteAll_button{
-    width: 25%;
-    height:35%;
-    position: relative;
-    top:-57px;
-    margin-left:33.5rem;
+.todolist .inputs-buttons a .deleteAll_button{
+    width: 10rem;
+    height:3rem;
+    position: absolute;
+    top:15.2rem;
+    left:59.7rem;
+    
+
 }
-.todolist .inputs-buttons .deleteAll_button button{
-    width: 100%;
+.todolist .inputs-buttons a .deleteAll_button button{
+    width: 100%; 
     height: 100%;
     border-radius: 30px;
     background-color: rgb(120, 0, 0);
     color: rgb(255, 255, 255);
     font-size: larger;  
-    border: none;
+    border: none; 
 }
 
 
@@ -130,43 +141,52 @@ body{
     width:100%;
     height:60%;
     color:white;
-    overflow: auto;
+    overflow:scroll;
 }
 .todolist .list ul{
     list-style-type: none;
     width: 100%;
     height: 100%;
-   
+    padding: 0;
+    margin-top: -3px;
+    /* border: 1px solid white; */
+    position: relative;
 } 
 .todolist .list::-webkit-scrollbar{
     display: none;
 }
 .todolist .list ul li{
+    /* border: 1px solid white; */
     width: 100%;
     height: auto;
-    margin-left: -24px;
+    /* margin-top: -12px; */
     display: flex;
     justify-content: start;
     justify-content: space-around;
-    position: relative;
-    left:-17px;
+    /* left:-17px; */
     align-items: center;
 } 
 .todolist .list ul li:nth-child(2n){
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(37, 37, 37);
+    /* border: 1px solid white; */
 }
 
 .todolist .list ul li #check{
     position: relative;
-    left:-3.5rem;
+    left:-1rem;
 }
-.todolist .list ul li .cross{
-    position: relative;
-    left:3.5rem;
+
+.todolist .list ul li input:checked + .info #text label{
+    text-decoration: line-through;
+    text-decoration-color: brown;
+}
+
+.todolist .list ul li i:hover{
+    background-color: black;
 }
 .todolist .list ul li #category{
     position: relative;
-    left:7rem;
+    /* left:7rem; */
     width:60px;
     height:30px;
     background-color: rgb(1, 46, 63);
@@ -176,7 +196,6 @@ body{
 .todolist .list ul li label{
     font-size: larger;
     margin: 0;
-    border: 1px solid white;
 }
 .todolist .list ul li .date{
     font-size: smaller;
@@ -184,6 +203,10 @@ body{
     color: grey;
 }
 
-.todolist .list ul li .date:nth-child(2n-1){
-    color: rgb(0, 0, 0);
+.todolist .list ul li #text{
+    position: relative;
+    width:25rem;
+    height: auto;
+    margin:5px 0px;
+    word-wrap: break-word;
 }

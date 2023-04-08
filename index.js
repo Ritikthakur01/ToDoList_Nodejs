@@ -6,6 +6,8 @@ const app=express();
 //aquiring mongoose
 const db= require('./config/mongoose')
 
+module.exports.todoList=require('./models/TodoList')
+
 //set ejs(view engine)
 app.set('view engine', 'ejs');
 // set ejs path
@@ -15,9 +17,10 @@ app.set('views','./views')
 //for getting to access of assets.
 app.use(express.static("assets"))
 
+app.use(express.urlencoded());
 
-//declase a root route
-app.get('/',require('./routes'))
+//use express route.
+app.use('/',require('./routes'))
 
 
 // creating server at port 8000
