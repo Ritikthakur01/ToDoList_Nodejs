@@ -10,7 +10,7 @@ body{
     height:70vh;
     margin-top:15vh ;
     background-color: black;
-    box-shadow: 0px 0px 13px 3px rgb(196, 196, 196);
+    box-shadow: 0px 0px 13px 3px rgb(219, 219, 219);
 }
 .todolist .heading{
     width:100%;
@@ -117,9 +117,9 @@ body{
 }
 .todolist .inputs-buttons a .deleteAll_button{
     width: 10rem;
-    height:3rem;
+    height:2.8rem;
     position: absolute;
-    top:15.2rem;
+    top:14.59rem;
     left:59.7rem;
     
 
@@ -142,6 +142,7 @@ body{
     height:60%;
     color:white;
     overflow:scroll;
+    padding-bottom: 20px;
 }
 .todolist .list ul{
     list-style-type: none;
@@ -189,9 +190,10 @@ body{
     /* left:7rem; */
     width:60px;
     height:30px;
-    background-color: rgb(1, 46, 63);
+    background-color: rgb(0, 157, 214);
     display: grid;
     place-content: center;
+    color:black;
 }
 .todolist .list ul li label{
     font-size: larger;

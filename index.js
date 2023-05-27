@@ -6,6 +6,7 @@ const app=express();
 //aquiring mongoose
 const db= require('./config/mongoose')
 
+
 module.exports.todoList=require('./models/TodoList')
 
 //set ejs(view engine)
@@ -21,7 +22,6 @@ app.use(express.urlencoded());
 
 //use express route.
 app.use('/',require('./routes'))
-
 
 // creating server at port 8000
 app.listen(port,(err)=>{
