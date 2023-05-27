@@ -5,8 +5,6 @@ const mongoose=require('mongoose');
 mongoose.connect('mongodb+srv://bhadauriaritik:Ritik2000@cluster0.mu0g0wu.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
 }); 
 
 //making a connection
