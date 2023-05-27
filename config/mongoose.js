@@ -2,7 +2,7 @@
 const mongoose=require('mongoose');
 
 // making a connection with mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/To-Do_List_db'); 
+mongoose.connect('mongodb+srv://bhadauriaritik:Ritik2000@cluster0.mu0g0wu.mongodb.net/?retryWrites=true&w=majority'); 
 
 //making a connection
 const db=mongoose.connection
