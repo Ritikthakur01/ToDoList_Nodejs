@@ -2,6 +2,8 @@
 const mongoose=require('mongoose');
 
 // making a connection with mongodb
+
+
 mongoose.connect('mongodb+srv://bhadauriaritik:Ritik2000@cluster0.mu0g0wu.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
